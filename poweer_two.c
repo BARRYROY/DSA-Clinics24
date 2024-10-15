@@ -1,25 +1,20 @@
 #include <stdio.h>
 
-int power_two(int x) {
-    if (x <= 0) {
-        return 0; 
-    }
+int power_two(int x){
+    if(x == 1)return 0;
     
-    while (x != 1) {
-        if (x % 2 != 0) {
-            return 0;  
-        }
-        x = x / 2; 
+    while(x!= 1){
+        if(x % 2 != 0) return 0;
+        x = x/2 ;
     }
-    
-    return 1;  
+    return x == 1;
 }
 
 int main() {
     int x = 6;
     int y = 8;
     int z = 5;
-    int a = 32;
+    int a = 12;
     //int ret = power_two(x);
     //int ret = power_two(y);
     //int ret = power_two(z);
