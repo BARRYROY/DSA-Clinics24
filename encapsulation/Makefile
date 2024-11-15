@@ -23,3 +23,7 @@ test:
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
+
+run: encapsulation
+	./encapsulation
+	

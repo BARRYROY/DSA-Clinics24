@@ -30,6 +30,26 @@ alienPtr registerAlien(){
     return newAlien;
 }
 
-void deregisterAlien(alienPtr registeredAlien){
-    free(registeredAlien);
+void deregisterAlien(alienPtr* registeredAlien){
+    if(*registeredAlien != NULL){
+        free(*registeredAlien);
+        registeredAlien = NULL;
+    }
+}
+
+void alienWalk(alienPtr alien, int distance){
+    if(!alien->name){
+        printf("No alien available to walk.\n");
+    }else{
+        printf("Distance walked by %s, aged %d, was estimated to be %d. \n", alien->name, alien->age, distance);
+    }
+}
+
+
+void callAlien(alienPtr alien){
+    if(!alien->name){
+        printf("You cannot call alien. Alien does not exist.\n");
+    }else{
+        printf("Present!, %s replies.\n", alien->name);
+    }
 }
