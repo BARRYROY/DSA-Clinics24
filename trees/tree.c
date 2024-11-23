@@ -15,6 +15,14 @@ int main(){
     in_order_traversal(root);
     printf("\n");
 
+    printf("pre-order Traversal: ");
+    pre_order_traversal(root);
+    printf("\n");
+
+    printf("post-order Traversal: ");
+    post_order_traversal(root);
+    printf("\n");
+
     // Free the allocated memory
     free_tree(root);
 
@@ -49,12 +57,29 @@ rootPtr insert_node(rootPtr root, int data){
 
 void in_order_traversal(rootPtr root){
     if (root != NULL) {
-        in_order_traversal(root->left_node);
-        printf("%d ", root->data);
-        in_order_traversal(root->right_node);
+        in_order_traversal(root->left_node); /* visit all the nodes in the left*/
+        printf("%d ", root->data); /* move to the root */
+        in_order_traversal(root->right_node); /* visit all thhe nodes in the right */
     }
     return;
 }
+
+void pre_order_traversal(rootPtr root){
+    if(root){
+        printf("%d ", root->data);  /* start with the root */
+        pre_order_traversal(root->left_node);/* visit all the nodes in the left*/
+        pre_order_traversal(root->right_node);/* visit all thhe nodes in the right */
+    }
+
+ }
+
+ void post_order_traversal(rootPtr root){
+    if(root){
+        post_order_traversal(root->left_node);/* visit all the nodes in the left*/
+        post_order_traversal(root->right_node);/* visit all thhe nodes in the right */
+        printf("%d ", root->data); /* finish with the root */
+    }
+ }
 
 void free_tree(rootPtr root){
     if (!root){
