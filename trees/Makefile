@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c11 -pedantic
-SOURCE = tree.c
+SOURCE = tree.c balanced_tree.c
 TARGET = tree 
 OBJECTS = $(SOURCE:.c=.o)
 

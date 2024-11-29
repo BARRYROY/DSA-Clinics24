@@ -23,6 +23,13 @@ int main(){
     post_order_traversal(root);
     printf("\n");
 
+    if(is_balanced(root)){
+        printf("The root is balanced. \n");
+    }
+    else{
+        printf("The root is not balanced. \n");
+    }
+
     // Free the allocated memory
     free_tree(root);
 
